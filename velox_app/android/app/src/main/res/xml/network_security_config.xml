@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- android/app/src/main/res/xml/network_security_config.xml
+     This allows HTTP (localhost/LAN) connections in release builds -->
+<network-security-config>
+  <!-- Allow cleartext (HTTP) traffic to local development server -->
+  <domain-config cleartextTrafficPermitted="true">
+    <domain includeSubdomains="true">localhost</domain>
+    <domain includeSubdomains="true">192.168.0.0</domain>
+    <domain includeSubdomains="true">192.168.1.0</domain>
+    <domain includeSubdomains="true">10.0.2.2</domain>
+    <!-- Add your PC's IP here: -->
+    <domain includeSubdomains="true">192.168.1.100</domain>
+  </domain-config>
+  <!-- Require HTTPS for everything else (production) -->
+  <base-config cleartextTrafficPermitted="false">
+    <trust-anchors>
+      <certificates src="system"/>
+    </trust-anchors>
+  </base-config>
+</network-security-config>

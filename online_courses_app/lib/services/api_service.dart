@@ -4,7 +4,7 @@ import '../models/course.dart';
 import '../models/user.dart';
 
 class ApiService {
-  static const String baseUrl = 'http://10.0.2.2/courses/api';
+  static const String baseUrl = 'http://localhost/courses/api/login.php';
 
   static Future<List<Course>> getCourses() async {
     final response = await http.get(Uri.parse('$baseUrl/courses.php'));
